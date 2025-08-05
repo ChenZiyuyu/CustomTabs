@@ -3,24 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="#FFFFFF">
+    tools:context=".MainActivity">
 
-    <com.example.mycustomtabsapp.CustomTabLayout
-        android:id="@+id/custom_tab_layout"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#FFFFFF"
-        android:scrollbars="none" />
+        android:layout_height="50dp">
+
+        <com.example.mycustomtabsapp.CustomTabLayout
+            android:id="@+id/custom_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            android:scrollbars="none" />
+
+        <View
+            android:id="@+id/right_overlay"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/fade_out_right"
+            android:clickable="true"
+            android:focusable="true" />
+
+
+    </RelativeLayout>
+
     <com.example.mycustomtabsapp.CustomViewPager
         android:id="@+id/custom_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
     <FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
